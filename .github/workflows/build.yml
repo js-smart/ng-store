@@ -1,0 +1,28 @@
+name: Build
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest' ]
+        node: [ 'latest' ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: npm i --legacy-peer-deps
+      - name: Run Tests
+        run: npm run test:store
+      - name: Build
+        run: npm run build --configuration=production
+        env:
+          CI: true
