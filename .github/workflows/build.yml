@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm i --legacy-peer-deps
       - name: Run Tests
-        run: npm test:store
+        run: npm run test:store
       - name: Build
         run: npm run build --configuration=production
         env:
