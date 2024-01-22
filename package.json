@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --watch --hmr --port=4300",
+    "build": "ng build ng-store --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:store": "ng test --include='**/lib/*.spec.ts'",
-    "lint": "ng lint"
+    "e2e": "CI=true URL=http://localhost:4300 npx playwright test",
+    "lint": "ng lint ngxsmart"
   },
   "private": true,
   "dependencies": {
