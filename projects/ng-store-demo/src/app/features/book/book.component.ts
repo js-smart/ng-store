@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
 	ngOnInit(): void {
 		this.bookService.getBooks().subscribe((books) => {
 			this.books.set(books);
-			this.bookStore.setData(books);
+			this.bookStore.set(books);
 		});
 	}
 }
