@@ -21,7 +21,7 @@ describe('EntityStore', () => {
 	});
 
 	it('should find an item by id', () => {
-		service.setData(employees);
+		service.set(employees);
 		const item = service.findById(1001);
 		expect(item).toEqual({
 			id: 1001,
@@ -34,12 +34,12 @@ describe('EntityStore', () => {
 	});
 
 	it('should set data', () => {
-		service.setData(employees);
+		service.set(employees);
 		expect(service.data().length).toEqual(5);
 	});
 
 	it('should upsert an item', () => {
-		service.setData(employees);
+		service.set(employees);
 		const updatedEmployee = {
 			id: 1001,
 			firstName: 'Jack',
@@ -53,7 +53,7 @@ describe('EntityStore', () => {
 	});
 
 	it('should upsert multiple items', () => {
-		service.setData(employees);
+		service.set(employees);
 		const updatedEmployee1 = {
 			id: 1001,
 			firstName: 'Jack',
@@ -77,7 +77,7 @@ describe('EntityStore', () => {
 	});
 
 	it('should remove an item', () => {
-		service.setData(employees);
+		service.set(employees);
 		service.remove(1001);
 		expect(service.findById(1001)).toBeUndefined();
 		expect(service.data().length).toEqual(4);

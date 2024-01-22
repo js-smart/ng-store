@@ -31,7 +31,7 @@ export class EmployeeComponent implements OnInit {
 				isError: false,
 				message: 'Employees loaded.',
 			} as ProgressState);
-			this.employeeStore.setData(employees);
+			this.employeeStore.set(employees);
 		});
 	}
 }

@@ -1,6 +1,6 @@
 {
   "name": "@js-smart/ng-store",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "peerDependencies": {
     "@angular/common": "^17.1.0",
     "@angular/core": "^17.1.0"
