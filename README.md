@@ -1,4 +1,11 @@
 # NG Store
+<p align="center">
+
+[![CI](https://github.com/js-smart/ng-store/actions/workflows/build.yml/badge.svg)](https://github.com/js-smart/ng-store/actions/workflows/build.yml)
+<a href="https://www.npmjs.com/@js-smart/ng-store">
+<img src="https://img.shields.io/npm/v/@js-smart/ng-store" alt="Ng Store on npm" />
+</a>
+</p>
 
 A simple store built with Angular signals. The state information can be stored in `Store` and entities can be stored in `EntityStore`.
 The `Store` and `EntityStore` are built with Angular signals
