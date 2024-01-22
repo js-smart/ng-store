@@ -20,7 +20,7 @@
     "url": "https://github.com/js-smart/ng-store.git"
   },
   "bugs": {
-    "url": "https://github.com/js-smart/ng-store/issues",
+    "url": "https://github.com/js-smart/ng-store/issues"
   },
   "peerDependencies": {
     "@angular/common": "^17.0.0",
