@@ -2,6 +2,9 @@
 
 A simple store built with Angular signals
 
-## Running unit tests
+## Demo
+1. Run `npm run start` to start the demo 
+2. Open `http://localhost:4200` in your browser
 
+## Running unit tests
 Run `ng test` to execute the unit tests

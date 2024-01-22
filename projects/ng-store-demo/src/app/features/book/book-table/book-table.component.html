@@ -1,0 +1,36 @@
+<p-toast key="br" position="bottom-right"></p-toast>
+
+<p-table
+	[paginator]="true"
+	[rowsPerPageOptions]="[5, 10, 20, 100]"
+	[rows]="5"
+	[showCurrentPageReport]="true"
+	[tableStyle]="{ 'min-width': '50rem' }"
+	[value]="bookStore.data()"
+	currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+	<ng-template pTemplate="header">
+		<tr>
+			<th pSortableColumn="id" style="width: 25%">ID<p-sortIcon field="id" /></th>
+			<th pSortableColumn="title" style="width: 25%">Title<p-sortIcon field="title" /></th>
+			<th pSortableColumn="isbn" style="width: 25%">ISBN<p-sortIcon field="isbn" /></th>
+			<th pSortableColumn="auhtor" style="width: 25%">Author<p-sortIcon field="author" /></th>
+		</tr>
+	</ng-template>
+	<ng-template let-book pTemplate="body">
+		<tr>
+			<td>{{ book.id }}</td>
+			<td>{{ book.title }}</td>
+			<td>{{ book.isbn }}</td>
+			<td>{{ book.author }}</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="paginatorleft">
+		<p-button icon="pi pi-plus" styleClass="p-button-text" type="button"></p-button>
+	</ng-template>
+</p-table>
+
+<br />
+
+<div class="align-center">
+	<button (click)="updateBook()" label="Update Book" pButton type="button"></button>
+</div>

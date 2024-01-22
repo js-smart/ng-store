@@ -1,0 +1,42 @@
+@if (loadingState()?.isLoading) {
+	<p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
+}
+
+<p-table
+	[paginator]="true"
+	[rowsPerPageOptions]="[5, 10, 20, 100]"
+	[rows]="5"
+	[showCurrentPageReport]="true"
+	[tableStyle]="{ 'min-width': '50rem' }"
+	[value]="employees()"
+	currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+	<ng-template pTemplate="header">
+		<tr>
+			<th pSortableColumn="id" style="width: 10%">ID<p-sortIcon field="id" /></th>
+			<th pSortableColumn="firstName" style="width: 25%">First Name<p-sortIcon field="firstName" /></th>
+			<th pSortableColumn="lastName" style="width: 25%">Last Name<p-sortIcon field="lastName" /></th>
+			<th pSortableColumn="email" style="width: 25%">Email<p-sortIcon field="email" /></th>
+			<th pSortableColumn="phone" style="width: 15%">Phone<p-sortIcon field="phone" /></th>
+			<th pSortableColumn="age" style="width: 5%">Age<p-sortIcon field="age" /></th>
+		</tr>
+	</ng-template>
+	<ng-template let-employee pTemplate="body">
+		<tr>
+			<td>{{ employee.id }}</td>
+			<td>{{ employee.firstName }}</td>
+			<td>{{ employee.lastName }}</td>
+			<td>{{ employee.email }}</td>
+			<td>{{ employee.phone }}</td>
+			<td>{{ employee.age }}</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="paginatorleft">
+		<p-button icon="pi pi-plus" styleClass="p-button-text" type="button"></p-button>
+	</ng-template>
+</p-table>
+
+<br />
+
+<div class="align-center">
+	<button (click)="updateEmployee()" label="Update Employee" pButton type="button"></button>
+</div>
